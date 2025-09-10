@@ -43,9 +43,9 @@ export function DataTable({columns,data,}) {
 
   return (
 
-<div className="p-4">
+<div className="">
 
-<div className="flex items-center py-4 w-full">
+<div className="flex items-center pb-4  w-full">
     <Input
       placeholder="Filter IDs..."
       value={(table.getColumn("id")?.getFilterValue()) ?? ""}
@@ -106,7 +106,7 @@ export function DataTable({columns,data,}) {
     </Table>
   </div>
 
-  {/* Pagination */}
+
   <div className="flex items-center justify-end space-x-2 py-4">
     <Button
       variant="outline"

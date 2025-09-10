@@ -14,6 +14,10 @@ export const columns = [
   {
     accessorKey: "products",
     header: "Products",
+    cell : ({getValue})=>{
+      const products = getValue()
+      return products.map((p) => `${p.name}`).join(", "); 
+    }
   },
   {
     accessorKey: "total",

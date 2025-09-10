@@ -1,5 +1,7 @@
-import { Calendar, Home, Inbox, Menu, Search, Settings, X } from "lucide-react"
+import { Calendar, File, Home,  Menu, Search, Settings, ShoppingCart, X } from "lucide-react"
+import { BarChart3, FileText, Users } from "lucide-react"
 
+import logo from '@/assets/Images/chart-statistics-right-side.jpg'
 import {
   Sidebar,
   SidebarContent,
@@ -9,7 +11,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  useSidebar,
+  // useSidebar,
 } from "@/components/ui/sidebar"
 import { Button } from "../button"
 
@@ -17,23 +19,23 @@ import { Button } from "../button"
 const items = [
   {
     title: "Home",
-    url: "#",
+    url: "/",
     icon: Home,
   },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
+    title: "Sales",
+    url: "/sales",
+    icon: ShoppingCart,
   },
   {
-    title: "Calendar",
+    title: "Reports",
     url: "#",
-    icon: Calendar,
+    icon:  BarChart3,
   },
   {
-    title: "Search",
+    title: "Contracts",
     url: "#",
-    icon: Search,
+    icon: FileText,
   },
   {
     title: "Settings",
@@ -43,12 +45,41 @@ const items = [
 ]
 
 export function AppSidebar() {
-     const {open,toggleSidebar} = useSidebar()
+    //  const {open,toggleSidebar} = useSidebar()
   return (
     <>
-    <div className="flex gap-0">
+    <div className="flex gap-0 ">
 
-    <Sidebar collapsible="offcanvas" >
+<Sidebar  collapsible="offcanvas" className="w-64   text-gray-100 shadow-lg">
+  <SidebarContent className="p-4 bg-primary">
+    <SidebarGroup>
+      <SidebarGroupLabel className=" uppercase flex items-center gap-3 font-semibold mb-2">
+        <img src={logo} alt="logo charts image" className="w-12 h-12 rounded-md object-contain" />
+        <h1 className="font-semibold text-lg  text-white">DashBoardX</h1>
+      </SidebarGroupLabel>
+
+      <SidebarGroupContent>
+        <SidebarMenu className="space-y-1 mt-4">
+          {items.map((item) => (
+            <SidebarMenuItem key={item.title}>
+              <SidebarMenuButton asChild>
+                <a
+                  href={item.url}
+                  className="flex items-center gap-3 px-3 py-2 rounded-md text-gray-100 hover:bg-gray-700 transition-colors"
+                >
+                  <item.icon className="w-5 h-5 text-gray-300" />
+                  <span className="text-sm font-medium">{item.title}</span>
+                </a>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          ))}
+        </SidebarMenu>
+      </SidebarGroupContent>
+    </SidebarGroup>
+  </SidebarContent>
+</Sidebar>
+
+    {/* <Sidebar collapsible="offcanvas" >
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Application</SidebarGroupLabel>
@@ -68,13 +99,13 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-    </Sidebar>
+    </Sidebar> */}
 
-<div className=" flex items-center px-2">
+{/* <div className=" flex items-center px-2">
         <Button onClick={toggleSidebar} className=" ">
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </Button>
-        </div> 
+        </div>  */}
   
   </div>
       </>

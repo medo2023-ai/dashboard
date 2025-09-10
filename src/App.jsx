@@ -1,42 +1,28 @@
-
-import { FileText } from 'lucide-react';
 import './App.css'
-import DashboardCard from './components/OverviewCard/OverviewCard';
-import { AppSidebar } from './components/ui/app-sidebar/AppSidebar';
-import { Button } from './components/ui/button';
-import { SidebarProvider } from '@/components/ui/sidebar';
-import QuickOverview from './Pages/QuickOverview/QuickOverview';
-import { DataTable } from './Pages/Sales/DataTable';
-import orders from './data/Sales';
-import { columns } from './Pages/Sales/Columns';
+
+import Sales from './Pages/Sales/Sales';
+import { createBrowserRouter } from 'react-router-dom';
+import Home from './Pages/Home/Home';
+import { RouterProvider } from 'react-router';
+import NotFound from './Pages/NotFound/NotFound';
+import Navbar from './Pages/Navbar/Navbar';
+import { NotificationProvider } from './context/Notification.context';
 
 function App() {
+  const router = createBrowserRouter([
+    {path: '/', element: <Home/>},
+    {path: '/sales', element: <Sales/>},
+    // {path: '/Navbar', element: },
+    { path: '*', element: <NotFound /> }
+
+])
 
   return (
      <>
-    <main  className='flex '>
-
-<div>
-<SidebarProvider
- style={{
-    "--sidebar-width": "20rem",
-    "--sidebar-width-mobile": "20rem",
-  }} defaultOpen={true}>
-  <AppSidebar/>
-</SidebarProvider>
-</div>
-
-<div>
-<QuickOverview/>
- <div className=" container mx-auto">
-      <DataTable columns={columns} data={orders} />
-     
-    </div>
- </div>
-    </main>
-
-
-</>
+     <NotificationProvider>
+ <RouterProvider router={router} /> 
+ 
+ </NotificationProvider>    </>
   )
 }
 

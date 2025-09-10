@@ -2,243 +2,162 @@ const orders = [
   {
     id: "ORD-1001",
     customer: "Ahmed Ali",
-    products: ["Laptop", "Mouse"],
+    products: [
+      { name: "Laptop", category: "Electronics" },
+      { name: "Mouse", category: "Accessories" }
+    ],
     total: 1200,
     status: "Pending",
-    date: "2025-09-01",
+    date: "3-9-2025"
   },
   {
     id: "ORD-1002",
     customer: "Sara Mohamed",
-    products: ["Smartphone"],
+    products: [
+      { name: "Smartphone", category: "Electronics" }
+    ],
     total: 800,
     status: "Delivered",
-    date: "2025-09-02",
+    date: "2-9-2025"
   },
   {
     id: "ORD-1003",
     customer: "Omar Khaled",
-    products: ["Headphones", "Keyboard"],
+    products: [
+      { name: "Headphones", category: "Electronics" },
+      { name: "Keyboard", category: "Accessories" }
+    ],
     total: 250,
     status: "Cancelled",
-    date: "2025-09-03",
+    date: "1-9-2025"
   },
   {
     id: "ORD-1004",
     customer: "Mona Youssef",
-    products: ["Smartwatch"],
+    products: [
+      { name: "Smartwatch", category: "Electronics" }
+    ],
     total: 300,
     status: "Delivered",
-    date: "2025-09-04",
+    date: "5-9-2025"
   },
   {
     id: "ORD-1005",
     customer: "Hassan Ibrahim",
-    products: ["Camera", "Tripod"],
+    products: [
+      { name: "Camera", category: "Electronics" },
+      { name: "Tripod", category: "Accessories" }
+    ],
     total: 950,
     status: "Pending",
-    date: "2025-09-05",
+    date: "4-9-2025"
   },
   {
     id: "ORD-1006",
     customer: "Laila Hany",
-    products: ["Tablet"],
+    products: [
+      { name: "Tablet", category: "Electronics" }
+    ],
     total: 450,
     status: "Delivered",
-    date: "2025-09-06",
+    date: "5-9-2025"
   },
   {
     id: "ORD-1007",
     customer: "Khaled Samir",
-    products: ["Monitor", "Keyboard"],
+    products: [
+      { name: "Monitor", category: "Unknown" }, // غير موجود في categoryMap
+      { name: "Keyboard", category: "Accessories" }
+    ],
     total: 600,
     status: "Cancelled",
-    date: "2025-09-07",
+    date: "7-9-2025"
   },
   {
     id: "ORD-1008",
     customer: "Nour Fathy",
-    products: ["Printer"],
+    products: [
+      { name: "Printer", category: "Electronics" }
+    ],
     total: 200,
     status: "Pending",
-    date: "2025-09-08",
+    date: "8-9-2025"
   },
   {
     id: "ORD-1009",
     customer: "Mahmoud Tarek",
-    products: ["Router"],
+    products: [
+      { name: "Router", category: "Electronics" }
+    ],
     total: 150,
     status: "Delivered",
-    date: "2025-09-09",
+    date: "9-9-2025"
   },
   {
     id: "ORD-1010",
     customer: "Dina Gamal",
-    products: ["Camera", "Lens"],
+    products: [
+      { name: "Camera", category: "Electronics" },
+      { name: "Lens", category: "Accessories" }
+    ],
     total: 1100,
     status: "Delivered",
-    date: "2025-09-10",
+    date: "10-9-2025"
   },
   {
     id: "ORD-1011",
     customer: "Youssef Nabil",
-    products: ["Smartphone", "Charger"],
+    products: [
+      { name: "Smartphone", category: "Electronics" },
+      { name: "Charger", category: "Accessories" }
+    ],
     total: 900,
     status: "Pending",
-    date: "2025-09-11",
+    date: "11-9-2025"
   },
   {
     id: "ORD-1012",
     customer: "Salma Hossam",
-    products: ["Laptop Bag"],
+    products: [
+      { name: "Laptop Bag", category: "Accessories" }
+    ],
     total: 80,
     status: "Cancelled",
-    date: "2025-09-12",
+    date: "12-9-2025"
   },
   {
     id: "ORD-1013",
     customer: "Mostafa Adel",
-    products: ["Smartwatch", "Earbuds"],
+    products: [
+      { name: "Smartwatch", category: "Electronics" },
+      { name: "Earbuds", category: "Accessories" }
+    ],
     total: 350,
     status: "Delivered",
-    date: "2025-09-13",
+    date: "13-9-2025"
   },
   {
     id: "ORD-1014",
     customer: "Reem Fawzy",
-    products: ["Keyboard", "Mouse"],
+    products: [
+      { name: "Keyboard", category: "Accessories" },
+      { name: "Mouse", category: "Accessories" }
+    ],
     total: 120,
     status: "Pending",
-    date: "2025-09-14",
+    date: "14-9-2025"
   },
   {
     id: "ORD-1015",
     customer: "Amr Sherif",
-    products: ["Tablet", "Stylus"],
+    products: [
+      { name: "Tablet", category: "Electronics" },
+      { name: "Stylus", category: "Accessories" }
+    ],
     total: 550,
     status: "Delivered",
-    date: "2025-09-15",
-  },
-   {
-    id: "ORD-1001",
-    customer: "Ahmed Ali",
-    products: ["Laptop", "Mouse"],
-    total: 1200,
-    status: "Pending",
-    date: "2025-09-01",
-  },
-  {
-    id: "ORD-1002",
-    customer: "Sara Mohamed",
-    products: ["Smartphone"],
-    total: 800,
-    status: "Delivered",
-    date: "2025-09-02",
-  },
-  {
-    id: "ORD-1003",
-    customer: "Omar Khaled",
-    products: ["Headphones", "Keyboard"],
-    total: 250,
-    status: "Cancelled",
-    date: "2025-09-03",
-  },
-  {
-    id: "ORD-1004",
-    customer: "Mona Youssef",
-    products: ["Smartwatch"],
-    total: 300,
-    status: "Delivered",
-    date: "2025-09-04",
-  },
-  {
-    id: "ORD-1005",
-    customer: "Hassan Ibrahim",
-    products: ["Camera", "Tripod"],
-    total: 950,
-    status: "Pending",
-    date: "2025-09-05",
-  },
-  {
-    id: "ORD-1006",
-    customer: "Laila Hany",
-    products: ["Tablet"],
-    total: 450,
-    status: "Delivered",
-    date: "2025-09-06",
-  },
-  {
-    id: "ORD-1007",
-    customer: "Khaled Samir",
-    products: ["Monitor", "Keyboard"],
-    total: 600,
-    status: "Cancelled",
-    date: "2025-09-07",
-  },
-  {
-    id: "ORD-1008",
-    customer: "Nour Fathy",
-    products: ["Printer"],
-    total: 200,
-    status: "Pending",
-    date: "2025-09-08",
-  },
-  {
-    id: "ORD-1009",
-    customer: "Mahmoud Tarek",
-    products: ["Router"],
-    total: 150,
-    status: "Delivered",
-    date: "2025-09-09",
-  },
-  {
-    id: "ORD-1010",
-    customer: "Dina Gamal",
-    products: ["Camera", "Lens"],
-    total: 1100,
-    status: "Delivered",
-    date: "2025-09-10",
-  },
-  {
-    id: "ORD-1011",
-    customer: "Youssef Nabil",
-    products: ["Smartphone", "Charger"],
-    total: 900,
-    status: "Pending",
-    date: "2025-09-11",
-  },
-  {
-    id: "ORD-1012",
-    customer: "Salma Hossam",
-    products: ["Laptop Bag"],
-    total: 80,
-    status: "Cancelled",
-    date: "2025-09-12",
-  },
-  {
-    id: "ORD-1013",
-    customer: "Mostafa Adel",
-    products: ["Smartwatch", "Earbuds"],
-    total: 350,
-    status: "Delivered",
-    date: "2025-09-13",
-  },
-  {
-    id: "ORD-1014",
-    customer: "Reem Fawzy",
-    products: ["Keyboard", "Mouse"],
-    total: 120,
-    status: "Pending",
-    date: "2025-09-14",
-  },
-  {
-    id: "ORD-1015",
-    customer: "Amr Sherif",
-    products: ["Tablet", "Stylus"],
-    total: 550,
-    status: "Delivered",
-    date: "2025-09-15",
-  },
+    date: "15-9-2025"
+  }
 ];
 
 export default orders;

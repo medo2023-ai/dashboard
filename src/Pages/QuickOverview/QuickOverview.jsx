@@ -1,5 +1,6 @@
 
-import DashboardCard from "@/components/OverviewCard/OverviewCard"
+import OverviewCard from "@/components/OverviewCard/OverviewCard"
+
 import { BarChart3, FileText, ShoppingCart, Users } from "lucide-react"
 
 export default function QuickOverview() {
@@ -31,9 +32,9 @@ export default function QuickOverview() {
 ]
   return (
     <>
-    <div className="container  pt-6 grid gap-6 grid-cols-2 
+    <div className="container  grid gap-6 grid-cols-2 
     md:grid-cols-3 lg:grid-cols-4">
- {cardsData.map((card, index )=>(<DashboardCard card={card} key={index}/>))}
+ {cardsData.map((card, index )=>(<OverviewCard card={card} key={index}/>))}
 
   </div>
 
