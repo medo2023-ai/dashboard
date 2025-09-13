@@ -9,18 +9,31 @@ export default function Layout() {
         "--sidebar-width": "15rem",
         "--sidebar-width-mobile": "10rem",
       }}
-      defaultOpen={true} >
-      <div className="md:flex  md:flex-row min-h-screen gap-4">
-        <AppSidebar />
+      defaultOpen={true} className='block  md:flex' >
+<div className="min-h-screen md:grid md:grid-cols-[10rem_1fr] lg:grid-cols-[15rem_1fr] overflow-x-hidden">
 
-        <div className="dark:bg-slate-900">
-          <Navbar />
+{/* <div className="min-h-screen md:grid md:grid-cols-[minmax(4rem,6rem)_1fr] lg:grid-cols-[14rem_1fr] overflow-x-hidden"> */}
 
-          <main className=" md:p-6 dark:bg-slate-900">
-            <Outlet />
-          </main>
-        </div>
-      </div>
+
+
+  <aside className="hidden md:block dark:bg-slate-800 overflow-hidden">
+    <AppSidebar />
+  </aside>
+
+
+  <div className="dark:bg-slate-900 flex flex-col">
+    <Navbar className=" " />
+
+    <main className="flex-1 p-3  dark:bg-slate-900">
+      <Outlet />
+    </main>
+  </div>
+</div>
+
+
+
+
+
     </SidebarProvider>
   );
 }
