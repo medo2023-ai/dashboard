@@ -30,12 +30,12 @@ export default function ActivitySectionTable({columns}) {
 
   return (
      <>
-    <Table className="w-full border-collapse">
-      <TableHeader className="bg-gray-100">
+    <Table className="w-full  rounded-lg border shadow-sm  ">
+      <TableHeader className="bg-gray-100 dark:bg-slate-800">
           {table.getHeaderGroups().map(headerGroup => (
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map(header => (
-                <TableHead key={header.id} className="px-4 py-2 text-left">
+                <TableHead key={header.id} className="px-4 py-2 text-left dark:text-white">
                   {flexRender(header.column.columnDef.header, header.getContext())}
                 </TableHead>
               ))}
@@ -45,9 +45,9 @@ export default function ActivitySectionTable({columns}) {
 
      
        {table.getRowModel().rows.map((row, index) => (
-            <TableRow key={row.id} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+            <TableRow key={row.id} className={index % 2 === 0 ? "bg-gray-50 dark:bg-slate-900" : "bg-white dark:bg-slate-800"}>
               {row.getVisibleCells().map(cell => (
-                <TableCell key={cell.id} className="px-4 py-2">
+                <TableCell key={cell.id} className="px-4 py-2 dark:text-white text-left">
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </TableCell>
               ))}
@@ -55,7 +55,7 @@ export default function ActivitySectionTable({columns}) {
           ))}
     </Table>
 
-      <div className="flex items-center justify-end space-x-2 py-4">
+      <div className="flex items-center justify-end space-x-2 py-4 dark:text-white">
         <Button
           variant="outline"
           size="sm"
