@@ -11,20 +11,15 @@ import Layout from './layout/Layout';
 
 function App() {
   const router = createBrowserRouter([
-    // {path: '/', element: <Home/>},
-    // {path: '/sales', element: <Sales/>},
-    // // {path: '/Navbar', element: },
-    // { path: '*', element: <NotFound /> }
-
-     {
+      {
       path: "/",
-      element: <Layout />,   // 👈 هنا بقى فيه Layout ثابت
+      element: <Layout />,   
       children: [
-        { index: true, element: <Home /> },       // /
-        { path: "sales", element: <Sales /> },    // /sales
+        { index: true, element: <Home /> },       
+        { path: "sales", element: <Sales /> },   
       ],
     },
-    { path: "*", element: <NotFound /> },          // 404
+    { path: "*", element: <NotFound /> },        
   ]);
 
 

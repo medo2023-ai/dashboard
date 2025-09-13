@@ -12,7 +12,6 @@ export default function Layout() {
       defaultOpen={true} className='block  md:flex' >
 <div className="min-h-screen md:grid md:grid-cols-[10rem_1fr] lg:grid-cols-[15rem_1fr] overflow-x-hidden">
 
-{/* <div className="min-h-screen md:grid md:grid-cols-[minmax(4rem,6rem)_1fr] lg:grid-cols-[14rem_1fr] overflow-x-hidden"> */}
 
 
 
