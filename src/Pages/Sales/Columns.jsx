@@ -32,16 +32,20 @@ export const columns = [
 
     switch (status) {
       case "Pending":
-        colorClass = "bg-yellow-100 text-yellow-800";
+        colorClass = " text-yellow-600";
+        // bg-yellow-100
         break;
       case "Delivered":
-        colorClass = "bg-green-100 text-green-800";
+        colorClass = "text-green-600";
+        // bg-green-100 
         break;
       case "Cancelled":
-        colorClass = "bg-red-100 text-red-800";
+        colorClass = " text-red-500";
+        // bg-red-100
         break;
       default:
-        colorClass = "bg-gray-100 text-gray-800";
+        colorClass = "text-gray-800";
+        // bg-gray-100 
     }
 
     return (

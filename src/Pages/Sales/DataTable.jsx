@@ -1,28 +1,16 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import {
-  flexRender,
-  getCoreRowModel,
-  useReactTable,
-  getFilteredRowModel,
-  getSortedRowModel,
-  getPaginationRowModel,
+import { flexRender, getCoreRowModel, useReactTable, getFilteredRowModel, 
+  getSortedRowModel, getPaginationRowModel,
 } from "@tanstack/react-table";
 import { Input } from "@/components/ui/input";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
 } from "@/components/ui/table";
 import React, { useState } from "react";
-// import React, { useState } from "react"
 export function DataTable({ columns, data }) {
   const [sorting, setSorting] = useState([]);
   const [columnFilters, setColumnFilters] = useState([]);
-
+ 
   const table = useReactTable({
     data,
     columns,
@@ -47,20 +35,19 @@ export function DataTable({ columns, data }) {
           onChange={(event) =>
             table.getColumn("id")?.setFilterValue(event.target.value)
           }
-          className="w-full  border-gray-300 focus:border-slate-500 focus:ring focus:ring-blue-200 rounded-md placeholder:text-gray-100"
+          className="w-full text-slate-700 dark:text-white  border-gray-300 focus:border-slate-500 focus:ring focus:ring-blue-200 rounded-md placeholder:text-gray-100"
         />
       </div>
 
       <div className="overflow-hidden rounded-lg border shadow-sm">
-        <Table className="min-w-full bg-white">
+        <Table className="min-w-full bg-white dark:bg-slate-800">
           <TableHeader className="bg-gray-100 dark:bg-slate-800">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
                   <TableHead
                     key={header.id}
-                    className="font-semibold text-gray-700 dark:text-white text-left px-4 py-2 cursor-pointer select-none"
-                  >
+                    className="font-semibold text-gray-700 dark:text-white text-left px-4 py-2 cursor-pointer select-none" >
                     {header.isPlaceholder
                       ? null
                       : flexRender(
@@ -93,44 +80,29 @@ export function DataTable({ columns, data }) {
                         cell.column.columnDef.cell,
                         cell.getContext()
                       )}
-                    </TableCell>
-                  ))}
+                    </TableCell>   ))}
                 </TableRow>
-              ))
-            ) : (
+              ))  ) : (
               <TableRow>
                 <TableCell
                   colSpan={columns.length}
-                  className="h-24 text-center text-gray-500 dark:text-white"
-                >
-                  No results.
-                </TableCell>
-              </TableRow>
-            )}
+                  className="h-24 text-center text-gray-500 dark:text-white" >
+                  No results.  </TableCell>
+              </TableRow>  )}
           </TableBody>
         </Table>
       </div>
 
       <div className="flex items-center justify-end space-x-2 py-4">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.previousPage()}
+        <Button variant="outline" size="sm" onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
-          className="border-gray-300 text-gray-700 dark:text-white"
-        >
-          Previous
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.nextPage()}
+          className="border-gray-300 text-gray-700 dark:text-white" >
+          Previous</Button>
+
+        <Button variant="outline" size="sm" onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
-          className="border-gray-300 text-gray-700 dark:text-white"
-        >
-          Next
-        </Button>
+          className="border-gray-300 text-gray-700 dark:text-white" >
+          Next </Button>
       </div>
     </div>
-  );
-}
+  );  }

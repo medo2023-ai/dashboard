@@ -1,3 +1,4 @@
+import MobileBottomNav from "@/components/MobileBottomNav/MobileBottomNav";
 import { AppSidebar } from "@/components/ui/app-sidebar/AppSidebar";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import Navbar from "@/Pages/Navbar/Navbar";
@@ -20,7 +21,7 @@ export default function Layout() {
   </aside>
 
 
-  <div className="dark:bg-slate-900 flex flex-col">
+  <div className="dark:bg-slate-900 flex flex-col ">
     <Navbar className=" " />
 
     <main className="flex-1 p-3  dark:bg-slate-900">
@@ -28,11 +29,8 @@ export default function Layout() {
     </main>
   </div>
 </div>
+ <MobileBottomNav />
 
-
-
-
-
-    </SidebarProvider>
+ </SidebarProvider>
   );
 }

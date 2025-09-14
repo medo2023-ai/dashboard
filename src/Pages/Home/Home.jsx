@@ -116,7 +116,7 @@ export default function Home() {
         <DataTable columns={columns} data={orders}  />
       </div>
 
-      <div className='rounded-lg'>
+      <div className=''>
         <h2 className="text-xl md:text-2xl font-semibold mb-4 dark:text-white">
           Activity Section
         </h2>
