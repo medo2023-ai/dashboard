@@ -49,25 +49,15 @@ export function ChartBarHorizontal() {
     </text>
   )}
 />
-
-
-   
-
-            <ChartTooltip 
+<ChartTooltip 
               cursor={false}
               content={<ChartTooltipContent hideLabel />} />
  
 <Bar dataKey="total" radius={4}  barSize={40}    >
 
-   <LabelList 
-  dataKey="total" 
-  position="right" 
-  className="fill-gray-900 dark:fill-white" 
-/>
-
-
-
-  {chartData.map((entry) => (
+   <LabelList  dataKey="total"  position="right" 
+  className="fill-gray-900 dark:fill-white" />
+{chartData.map((entry) => (
     <Cell key={entry.category} fill={chartConfig[entry.category]?.color || "#4f46e5"} />
   ))}
 </Bar>

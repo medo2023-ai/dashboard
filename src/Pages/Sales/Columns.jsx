@@ -62,8 +62,7 @@ export const columns = [
       return (
         <Button className=''
           variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
           Date
      
 <ArrowUpDown className="ml-2 h-4 w-4 text-black" />

@@ -1,17 +1,13 @@
-
-
 export  const Columns = [
   { accessorKey: "id", header: "ID" },
   { accessorKey: "user", header: "User" },
- 
   { accessorKey: "description", header: "Description" ,
         cell: ({ row }) => (
       <div className="max-w-[200px] truncate text-sm text-gray-700 dark:text-gray-300">
         {row.original.description}
       </div>
     ),
-
-  },
+},
   { accessorKey: "date_time", header: "Date" },
   {
     accessorKey: "status",

@@ -135,3 +135,11 @@
 text {
   @apply fill-gray-700 dark:fill-white;
 }
+html, body {
+  scrollbar-width: none; 
+  -ms-overflow-style: none;  
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
