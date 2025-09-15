@@ -20,16 +20,16 @@ function App() {
       path: "/",
       element: <Layout />,   
       children: [
-        { index: true, element: <Home /> },       
+        { path: "home", element: <Home /> },       
         { path: "sales", element: <Sales /> },   
         { path: "LoginForm", element: <LoginForm /> },   
     
       ],
     },
     { path: "*", element: <NotFound /> },        
-    { path: "AuthLayout", element: <AuthLayout /> ,
+    { path: "/", element: <AuthLayout /> ,
        children: [
-        // { index: true, element: <Home /> },       
+      { index: true, element:  < Signup /> },       
         { path: "Signup", element: < Signup /> },   
         { path: "signin", element: <Signin/> },   
 ],

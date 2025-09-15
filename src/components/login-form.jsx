@@ -36,7 +36,7 @@ export function LoginForm({ isSignup = false }) {
     },
   });
   return (
-    <Card className="shadow-lg border rounded-2xl dark:bg-slate-800 border-none">
+    <Card className="shadow-lg border rounded-2xl   dark:bg-slate-800 border-none">
       <CardHeader>
         <CardTitle className="text-2xl font-bold text-center dark:text-white">
           {" "}
@@ -167,18 +167,17 @@ export function LoginForm({ isSignup = false }) {
               {" "}
               Already have an account?{" "}
               <Link
-                to="/AuthLayout/signin"
+                to="/signin"
                 className="font-medium hover:underline"
               >
                 Login
               </Link>
             </>
-          ) : (
-            <>
+          ) : ( <>
               {" "}
               Don’t have an account?{" "}
               <Link
-                to="/AuthLayout/signup"
+                to="/signup"
                 className="font-medium hover:underline"
               >
                 Sign up{" "}

@@ -9,7 +9,7 @@ export default function AuthLayout() {
  <div className="dark:bg-slate-900 flex flex-col  h-screen">
     <Navbar className=" " />
 
-    <main className="flex-1 px-3  dark:bg-slate-900">
+    <main className="flex-1  px-3 h-screen md:h-auto flex  md:block  justify-center items-center dark:bg-slate-900">
       <Outlet />
     </main>
   </div>

@@ -4,7 +4,7 @@ import { BarChart3,FileText, Home,  LogOut,  Settings, ShoppingCart} from "lucid
 const items = [
   {
     title: "Home",
-    url: "/",
+    url: "/home",
     icon: Home,
   },
   {
@@ -27,11 +27,7 @@ const items = [
     url: "#",
     icon: Settings,
   },
-  {
-    title: "Log Out",
-    url: "#",
-    icon: LogOut,
-  },
+ 
 ]
 
  export default items

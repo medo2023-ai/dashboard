@@ -1,4 +1,3 @@
-import React from 'react'
 import { columns } from './Columns'
 import orders from '@/data/Sales'
 import TotalSales from '@/data/TotalSales'
@@ -24,9 +23,8 @@ export default function Sales() {
 
   <section className='space-y-8 '>
 
-
-      <section >
-      <ChartPieLabelList/>
+ <section>
+      <ChartPieLabelList isSales={true}/>
       </section>
       <section >
       <ChartLineDotsCustom/>
