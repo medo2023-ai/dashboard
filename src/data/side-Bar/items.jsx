@@ -1,5 +1,5 @@
 
-import { BarChart3,FileText, Home,  Settings, ShoppingCart} from "lucide-react"
+import { BarChart3,FileText, Home,  LogOut,  Settings, ShoppingCart} from "lucide-react"
 
 const items = [
   {
@@ -26,6 +26,11 @@ const items = [
     title: "Settings",
     url: "#",
     icon: Settings,
+  },
+  {
+    title: "Log Out",
+    url: "#",
+    icon: LogOut,
   },
 ]
 
