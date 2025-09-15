@@ -23,13 +23,13 @@ export function LoginForm({ isSignup = false }) {
       if (isSignup) {
   toast.success("Account created successfully!");
     setTimeout(() => {
-    navigate("/AuthLayout/signin");
+    navigate("/signin");
   }, 1200); 
       } else {
           localStorage.setItem("token", "mocked_token_123456");
         toast.success("Logged in successfully!");
            setTimeout(() => {
-   navigate("/");
+   navigate("/home");
   }, 1200); 
          }
 
