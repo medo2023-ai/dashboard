@@ -1,11 +1,12 @@
 "use client"
-import { ArrowUpDown, MoreHorizontal } from "lucide-react"
+import { ArrowUpDown} from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export const columns = [
   {
     accessorKey: "id",
     header: "Id",
+   
   },
   {
     accessorKey: "customer",
@@ -65,7 +66,7 @@ export const columns = [
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
           Date
      
-<ArrowUpDown className="ml-2 h-4 w-4 text-black" />
+<ArrowUpDown className="ml-2 h-4 w-4 text-black dark:text-white" />
 
         </Button>
       )

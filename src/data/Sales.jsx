@@ -4,7 +4,7 @@ const orders = [
     customer: "Ahmed Ali",
     products: [
       { name: "Laptop", category: "Electronics" },
-      { name: "Mouse", category: "Accessories" }
+   
     ],
     total: 1200,
     status: "Pending",
@@ -12,7 +12,7 @@ const orders = [
   },
   {
     id: "ORD-1002",
-    customer: "Sara Mohamed",
+    customer: "Sara ali",
     products: [
       { name: "Smartphone", category: "Electronics" }
     ],
@@ -22,7 +22,7 @@ const orders = [
   },
   {
     id: "ORD-1003",
-    customer: "Omar Khaled",
+    customer: "Omar Amr",
     products: [
       { name: "Headphones", category: "Electronics" },
       { name: "Keyboard", category: "Accessories" }
@@ -33,7 +33,7 @@ const orders = [
   },
   {
     id: "ORD-1004",
-    customer: "Mona Youssef",
+    customer: "Mona Ali",
     products: [
       { name: "Smartwatch", category: "Electronics" }
     ],
@@ -43,7 +43,7 @@ const orders = [
   },
   {
     id: "ORD-1005",
-    customer: "Hassan Ibrahim",
+    customer: "Ali umar",
     products: [
       { name: "Camera", category: "Electronics" },
       { name: "Tripod", category: "Accessories" }
@@ -62,17 +62,7 @@ const orders = [
     status: "Delivered",
     date: "5-9-2025"
   },
-  {
-    id: "ORD-1007",
-    customer: "Khaled Samir",
-    products: [
-      { name: "Monitor", category: "Unknown" }, // غير موجود في categoryMap
-      { name: "Keyboard", category: "Accessories" }
-    ],
-    total: 600,
-    status: "Cancelled",
-    date: "7-9-2025"
-  },
+  
   {
     id: "ORD-1008",
     customer: "Nour Fathy",
@@ -85,7 +75,7 @@ const orders = [
   },
   {
     id: "ORD-1009",
-    customer: "Mahmoud Tarek",
+    customer: "Moaz Amr",
     products: [
       { name: "Router", category: "Electronics" }
     ],
@@ -98,7 +88,7 @@ const orders = [
     customer: "Dina Gamal",
     products: [
       { name: "Camera", category: "Electronics" },
-      { name: "Lens", category: "Accessories" }
+      // { name: "Lens", category: "Accessories" }
     ],
     total: 1100,
     status: "Delivered",
@@ -106,10 +96,10 @@ const orders = [
   },
   {
     id: "ORD-1011",
-    customer: "Youssef Nabil",
+    customer: "Dina amr",
     products: [
       { name: "Smartphone", category: "Electronics" },
-      { name: "Charger", category: "Accessories" }
+      // { name: "Charger", category: "Accessories" }
     ],
     total: 900,
     status: "Pending",

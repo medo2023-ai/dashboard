@@ -49,7 +49,7 @@ export default  function ChartPieLabelList() {
 
       </PieChart>
     </ChartContainer>
-{/* 
+ 
     <div className="grid grid-cols-2 gap-4 my-4 text-sm px-6">
       {chartData.map((item, index) => (
         <div key={index} className="flex items-center gap-2">
@@ -60,7 +60,7 @@ export default  function ChartPieLabelList() {
           <span>{item.product} - {item.sales}</span>
         </div>
       ))}
-    </div> */}
+    </div> 
   </CardContent>
 </Card> )}
 

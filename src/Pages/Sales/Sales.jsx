@@ -12,7 +12,7 @@ import { ChartBarHorizontal } from '@/components/Bar Chart - Horizontal/ChartBar
 export default function Sales() {
   return (
 
- <main className="min-h-screen container mx-auto my-10 space-y-4">
+ <main className="min-h-screen container mx-auto  my-10 space-y-4 pb-10 md:pb-3 ">
       <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5  gap-6  ">
         {TotalSales.map((card, index) => (
           <OverviewCard card={card} key={index} />

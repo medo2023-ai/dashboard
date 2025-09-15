@@ -12,10 +12,12 @@ import Navbar from '../../components/Navbar/Navbar'
 export default function Home() {
   return (
     <main className=" ">
-      <section className="flex-1 space-y-6 p-4 md:p-6 dark:bg-slate-900">
-        <QuickOverview />
+      <section className=" dark:bg-slate-900  my-10 space-y-4 pb-10 md:pb-3  min-h-screen lg:container mx-auto  md:mr-3  lg:mr-0 ">
+       {/* flex-1  space-y-6 py-4 md:py-6 */}
+        {/* flex-1  py-4 md:py-6  */}
+        <QuickOverview className='container mx-auto' />
 
-        <section className="container dark:bg-slate-900 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <section className="container mx-auto dark:bg-slate-900 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           <div>
             <ChartPieLabelList className="h-64 md:h-72 lg:h-80" />
           </div>
@@ -46,3 +48,5 @@ export default function Home() {
     </main>
   );
 }
+
+

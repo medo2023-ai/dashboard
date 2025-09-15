@@ -13,15 +13,15 @@ export function AppSidebar() {
     <div className="flex gap-0 ">
 
 <Sidebar    collapsible="offcanvas" 
-className="  w-64 md:w-52  lg:w-64
+className="  w-64 md:w-44 lg:w-64
  text-gray-100 shadow-lg border-none "   >
 
-  <SidebarContent className="p-4 bg-primary dark:bg-slate-800"
+  <SidebarContent className="py-4 bg-primary dark:bg-slate-800"
    overlayProps={{ className: "dark" }}>
     <SidebarGroup>
-      <SidebarGroupLabel className=" uppercase flex items-center gap-1 lg:gap-3 font-semibold mb-2">
+      <SidebarGroupLabel className="  uppercase  flex w-full  px-0 items-center gap-1 lg:gap-3 font-semibold mb-2">
         <img src={logo} alt="logo charts image" className="w-12 h-12 rounded-md object-contain" />
-        <h1 className="font-semibold text-base  lg:text-lg  text-white">DashBoardX</h1>
+        <h1 className="font-semibold md:text-base  lg:text-lg  text-white">DashBoardX</h1>
       </SidebarGroupLabel>
 
       <SidebarGroupContent>
