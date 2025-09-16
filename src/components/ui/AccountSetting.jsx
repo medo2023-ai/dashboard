@@ -1,18 +1,22 @@
 import { useForm } from "react-hook-form";
 import { Con } from "@/js/context";
-import { Switch } from "@/components/ui/switch"
-import { useContext,useEffect } from "react";
+import { Switch } from "@/components/ui/switch";
+import { useContext, useEffect } from "react";
+import { Input } from "../ui/input";
+import { DialogPassword } from "./dialogpassword";
 
 export default function AccountSetting() {
-      const { users } = useContext(Con);
-        const currentUser = users && users.length > 0 ? users[0] : null;
-  const { register, handleSubmit,reset } = useForm({
+  const { users } = useContext(Con);
+  const currentUser = users && users.length > 0 ? users[0] : null;
+
+  const { register, reset } = useForm({
     defaultValues: {
-      name:"",
+      name: "",
       email: "",
       password: "",
     },
   });
+
   useEffect(() => {
     if (currentUser) {
       reset({
@@ -23,65 +27,64 @@ export default function AccountSetting() {
     }
   }, [currentUser, reset]);
 
-  const onSubmit = (data) => {
-    console.log("Updated Account Settings:", data);
-    // You can call API or update context here
-  };
-
   return (
-    <div className="p-6 bg-white shadow rounded-2xl   w-full">
-      <h2 className="text-2xl font-bold mb-6 text-gray-800 text-left">
+    <div className="w-full   shadow-md rounded-lg bg-white dark:bg-gray-900 transition-colors duration-300 ">
+      {/* Title */}
+      <h2 className="capitalize px-4 py-3 font-semibold text-xl border-b border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100">
         Account Settings
       </h2>
 
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="grid grid-cols-1 md:grid-cols-2 gap-6"
-      >
+      <form className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6">
         {/* Name */}
-        <div className="flex flex-col">
-          <label className="font-medium text-gray-700 mb-1">Name</label>
-          <input
-            type="text" 
-          disabled
+        <div className="flex flex-col w-full">
+          <label className="capitalize font-semibold text-gray-700 dark:text-gray-200 mb-1">
+            Name
+          </label>
+          <Input
+            type="text"
             {...register("name")}
-            className="rounded-lg border border-gray-300 p-2   focus:outline-none"
+            disabled
+            className="w-full dark:bg-gray-800 dark:border-gray-700 dark:text-white placeholder-gray-400 dark:placeholder-gray-300"
           />
         </div>
 
         {/* Email */}
-        <div className="flex flex-col">
-          <label className="font-medium text-gray-700 mb-1">Email</label>
-          <input
+        <div className="flex flex-col w-full">
+          <label className="capitalize font-semibold text-gray-700 dark:text-gray-200 mb-1">
+            Email
+          </label>
+          <Input
             type="email"
-            disabled
             {...register("email")}
-            className="rounded-lg border border-gray-300 p-2   focus:outline-none"
+            disabled
+            className="w-full dark:bg-gray-800 dark:border-gray-700 dark:text-white placeholder-gray-400 dark:placeholder-gray-300"
           />
         </div>
+
         {/* Password */}
         <div className="flex flex-col w-full">
-          <label className="font-medium text-gray-700 mb-1">Password</label>
-          <input
+          <label className="capitalize font-semibold text-gray-700 dark:text-gray-200 mb-1">
+            Password
+          </label>
+          <Input
             type="password"
-           disabled
             {...register("password")}
-            className="rounded-lg border border-gray-300 p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            disabled
+            className="w-full dark:bg-gray-800 dark:border-gray-700 dark:text-white placeholder-gray-400 dark:placeholder-gray-300"
           />
         </div>
-        {/*switch*/}
-        <div className=" flex items-center justify-between  rounded-lg">
-            <label className="font-medium text-gray-700 mb-1 p-3">Two-factor<br/>Authentication</label>
-            <Switch/>
+
+        {/* Two-Factor Authentication */}
+        <div className="flex items-center justify-between sm:col-span-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+          <span className="font-medium text-gray-800 dark:text-gray-200">
+            Two-Factor Authentication
+          </span>
+          <Switch />
         </div>
-        {/* Save button full width */}
-        <div className="col-span-1 md:col-span-2  text-left">
-          <button
-            type="submit"
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
-          >
-            change password
-          </button>
+
+        {/* Dialog to change info */}
+        <div className="flex items-center justify-start sm:col-span-2">
+          <DialogPassword  className="dark:text-white"/>
         </div>
       </form>
     </div>
