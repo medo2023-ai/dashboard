@@ -23,11 +23,11 @@ export function LoginForm({ isSignup = false }) {
       if (isSignup) {
   toast.success("Account created successfully!");
     setTimeout(() => {
-    navigate("/signin");
+    navigate("/auth/signin");
   }, 1200); 
       } else {
           localStorage.setItem("token", "mocked_token_123456");
-        toast.success("Logged in successfully!");
+          toast.success("Logged in successfully!");
            setTimeout(() => {
    navigate("/home");
   }, 1200); 
@@ -167,7 +167,7 @@ export function LoginForm({ isSignup = false }) {
               {" "}
               Already have an account?{" "}
               <Link
-                to="/signin"
+                to="/auth/signin"
                 className="font-medium hover:underline"
               >
                 Login
@@ -177,7 +177,7 @@ export function LoginForm({ isSignup = false }) {
               {" "}
               Don’t have an account?{" "}
               <Link
-                to="/signup"
+                to="/auth/signup"
                 className="font-medium hover:underline"
               >
                 Sign up{" "}

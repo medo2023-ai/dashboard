@@ -61,7 +61,7 @@ useEffect(() => {
         <Table className="min-w-full bg-white dark:bg-slate-800">
           <TableHeader className="bg-gray-100 dark:bg-slate-800">
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
+              <TableRow key={headerGroup.id} className='border-b border-gray-300 dark:border-gray-500'>
                 {headerGroup.headers.map((header) => (
                   <TableHead
                     key={header.id}
@@ -86,8 +86,8 @@ useEffect(() => {
                   className={`${
                     index % 2 === 0
                       ? "bg-white dark:bg-slate-900"
-                      : "bg-gray-50 dark:bg-slate-800"
-                  } hover:bg-gray-100 transition-colors text-left`}
+                      : "bg-white dark:bg-slate-800"
+                  } hover:bg-gray-100 transition-colors text-left border-b border-gray-300 dark:border-gray-500`}
                   data-state={row.getIsSelected() && "selected"}
                 >
                   {row.getVisibleCells().map((cell) => (
