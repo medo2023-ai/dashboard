@@ -175,7 +175,7 @@ export default function Reports() {
         </Card>
 
         {/* Pie Chart */}
-        <Card className="bg-white dark:bg-gray-800 border-none">
+        <Card className="bg-white dark:bg-gray-800 border-none pb-[30px]">
           <CardHeader>
             <CardTitle>Product Distribution</CardTitle>
           </CardHeader>
