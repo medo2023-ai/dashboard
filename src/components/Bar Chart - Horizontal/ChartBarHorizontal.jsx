@@ -51,7 +51,8 @@ export function ChartBarHorizontal() {
 />
 <ChartTooltip 
               cursor={false}
-              content={<ChartTooltipContent hideLabel />} />
+              content={<ChartTooltipContent hideLabel
+               className="text-white dark:text-white border border-gray-600" />} />
  
 <Bar dataKey="total" radius={4}  barSize={40}    >
 

@@ -161,7 +161,7 @@ export function LoginForm({ isSignup = false }) {
           </Button>
         </form>
 
-        <div className="mt-6 text-center text-sm dark:text-white">
+        {/* <div className="mt-6 text-center text-sm dark:text-white">
           {isSignup ? (
             <>
               {" "}
@@ -184,7 +184,7 @@ export function LoginForm({ isSignup = false }) {
               </Link>
             </>
           )}
-        </div>
+        </div> */}
       </CardContent>{" "}
     </Card>
   );

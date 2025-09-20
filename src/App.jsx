@@ -11,7 +11,7 @@ import Layout from './layout/Layout';
 import Signin from './Pages/auth/Signin';
 import { LoginForm } from './components/login-form';
 import AuthLayout from './layout/AuthLayout';
-import Signup from './Pages/auth/Signup';
+
 import { Toaster } from 'react-hot-toast';
 
 function App() {
@@ -40,7 +40,7 @@ function App() {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to="/auth/signup" replace />,
+    element: <Navigate to="/auth/signin" replace />,
   },
   {
     path: "/",
@@ -56,10 +56,10 @@ const router = createBrowserRouter([
     path: "/auth",
     element: <AuthLayout />,
     children: [
-      { index: true, element: <Signup /> },       
-      { path: "signup", element: <Signup /> },   
-      { path: "signin", element: <Signin/> },   
-    ],
+      { index: true, element: <Signin/> },   
+      { path: "signin", element: <Signin /> },     
+     
+ ],
   },        
 ]);
 

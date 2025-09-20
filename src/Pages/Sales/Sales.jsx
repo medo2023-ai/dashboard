@@ -1,14 +1,15 @@
 import { columns } from './Columns'
-import orders from '@/data/Sales'
 import TotalSales from '@/data/TotalSales'
-
 import OverviewCard from '@/components/OverviewCard/OverviewCard'
 import { DataTable } from './DataTable'
 import ChartPieLabelList from '@/components/PieChart/ChartPieLabelList'
 import { ChartLineDotsCustom } from '@/components/LineChart/ChartLineDotsCustom'
 import { ChartBarHorizontal } from '@/components/Bar Chart - Horizontal/ChartBarHorizontal'
+import orders from '@/data/Sales'
+
 
 export default function Sales() {
+  
   return (
 
  <main className="min-h-screen container mx-auto  my-10 space-y-4 pb-10 md:pb-3 ">
