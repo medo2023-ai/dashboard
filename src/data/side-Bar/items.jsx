@@ -5,7 +5,8 @@ import {
   LogOut,  
   Settings, 
   ShoppingCart,
-  Users
+  Users,
+  Tags
 } from "lucide-react"
 
 const items = [
@@ -22,7 +23,7 @@ const items = [
   {
     title: "Reports",
     url: "/reports",
-    icon:  BarChart3,
+    icon: BarChart3,
   },
   {
     title: "Contracts",
@@ -35,6 +36,11 @@ const items = [
     icon: Users,
   },
   {
+    title: "Pricing Catalog",
+    url: "/catalog",
+    icon: Tags,
+  },
+  {
     title: "Settings",
     url: "/setting",
     icon: Settings,
@@ -45,5 +51,6 @@ const items = [
     icon: LogOut,
   },
 ]
+
 
 export default items
