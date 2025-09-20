@@ -1,5 +1,4 @@
 import './App.css'
-import Sales from './Pages/Sales/Sales';
 import { createBrowserRouter } from 'react-router-dom';
 import Home from './Pages/Home/Home';
 import { RouterProvider } from "react-router-dom";
@@ -18,12 +17,20 @@ import UserManagementtPage from './components/ui/UserManagement';
 import ContractPage from './components/ui/Contractpage';
 import Setting from './components/ui/setting';
 import ReportsPage from './components/ui/reports';
+import Catalog from './components/ui/catalog';
+import Sales from './Pages/Sales/Sales';
 function App() {
   const [data,setData]=useState([]);
      const [file, setFile] = useState(null); 
        const [users,setUsers]=useState([]);
        const [activities, setActivities ]= useState([]);
-  const router = createBrowserRouter([
+       const [industry,setIndustry]=useState([]);
+       const[packages,setPackage]=useState([]);
+       const[features,setFeature]=useState([]);
+       const [services,setServices]=useState([]);
+        const [invoiceItems, setInvoiceItems] = useState([]);
+  const [discount, setDiscount] = useState(0);
+         const router = createBrowserRouter([
       {
       path: "/",
       element: <Layout />,   
@@ -36,7 +43,8 @@ function App() {
           {path:"setting",element:<Setting/>} ,  
            {path:"users",element:<UserManagementtPage/>} ,
            {path:"reports",element:<ReportsPage/>} ,
-    
+             {path:"catalog",element:<Catalog/>},
+
       ],
     },
     { path: "*", element: <NotFound /> },        
@@ -53,7 +61,7 @@ function App() {
 
   return (
      <>
-     <Con.Provider value={{data,setData,file,setFile,users,setUsers,activities,setActivities}}>
+     <Con.Provider value={{data,setData,invoiceItems,setInvoiceItems,discount,setDiscount,services,setServices,file,setFile,users,setUsers,activities,setActivities,industry,setIndustry,packages,setPackage,features,setFeature}}>
        <NotificationProvider>
  <RouterProvider router={router} /> 
     <Toaster position="top-right" reverseOrder={false} />
