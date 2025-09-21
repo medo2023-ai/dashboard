@@ -1,13 +1,14 @@
 "use client"
 import { ArrowUpDown} from "lucide-react"
 import { Button } from "@/components/ui/button"
+import ActionsMenu from "@/components/Sales/ActionsMenu"
+import { filterFns } from "@tanstack/react-table"
 
 export const columns = [
   {
     accessorKey: "id",
     header: "Id",
-   
-  },
+   },
   {
     accessorKey: "customer",
     header: "Customer",
@@ -72,5 +73,46 @@ export const columns = [
       )
     },
   },
+   {
+     accessorKey: "team",
+    header: "Team",
+    cell : ({getValue})=>{
+      const team = getValue()
+   const colors = {
+      Closer: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
+      Agent: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
+      Pricing: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
+    };
 
+
+    return (
+      <span
+        className={`px-3 py-1 rounded-full text-sm font-medium text-left ${colors[team] || "bg-gray-600 text-white"}`}>
+        {team}
+      </span> )
+    },
+     filterFn:(row, columnId, filterValue)=>{
+        if (filterValue === "All") return true;
+        return row.getValue(columnId) === filterValue
+     }
+  },
+  
+{
+    accessorKey: "actions",
+    header: "Actions",
+    cell: ({row})=>{
+
+      const order = row.original
+  
+     
+    
+       return ( <>
+        <ActionsMenu  order={order} />
+          
+                 </>
+       )
+    }
+   
+  },
+ 
 ]

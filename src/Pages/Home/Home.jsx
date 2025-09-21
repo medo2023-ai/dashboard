@@ -19,7 +19,7 @@ export default function Home() {
 
         <section className="container mx-auto dark:bg-slate-900 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           <div>
-            <ChartPieLabelList className="h-64 md:h-72 lg:h-80" />
+            <ChartPieLabelList  isSales={false} className="h-64 md:h-72 lg:h-80" />
           </div>
           <div>
             <ChartLineDotsCustom className="h-64 md:h-72 lg:h-80" />

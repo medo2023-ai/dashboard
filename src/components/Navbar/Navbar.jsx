@@ -74,9 +74,7 @@ function toggleDarkMode(){
 
 }
 
-
-
-      </DropdownMenu>
+</DropdownMenu>
     
     </div>
       </section> 

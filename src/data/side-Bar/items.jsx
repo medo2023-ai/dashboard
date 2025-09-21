@@ -12,7 +12,7 @@ import {
 const items = [
   {
     title: "Home",
-    url: "/",
+    url: "/home",
     icon: Home,
   },
   {
@@ -45,11 +45,7 @@ const items = [
     url: "/setting",
     icon: Settings,
   },
-  {
-    title: "Log Out",
-    url: "#",
-    icon: LogOut,
-  },
+ 
 ]
 
 

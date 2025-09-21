@@ -3,11 +3,12 @@ import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent,
    SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem,
   } from "@/components/ui/sidebar"
 import items from '@/data/side-Bar/items'
-import { Link } from 'react-router-dom'
+import { LogOut } from 'lucide-react'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 export function AppSidebar() {
-    //  const {open,toggleSidebar} = useSidebar()
+   const navigate = useNavigate()
   return (
     <>
     <div className="flex gap-0 ">
@@ -36,9 +37,18 @@ className="  w-64 md:w-44 lg:w-64
                   <item.icon className="w-5 h-5 text-gray-300" />
                   <span className="text-sm font-medium">{item.title}</span>
                 </Link>
+             
               </SidebarMenuButton>
             </SidebarMenuItem>
           ))}
+             <button className='flex items-center gap-3 px-3 py-2 rounded-md text-gray-100 hover:bg-gray-700 transition-colors'
+             onClick={()=> {
+              localStorage.removeItem('token')
+              navigate('/auth/signin')
+             }}> 
+                 <LogOut className="w-5 h-5 text-gray-300"/>
+                 <span className="text-sm font-medium"> Log Out</span>
+             </button>
         </SidebarMenu>
       </SidebarGroupContent>
     </SidebarGroup>

@@ -7,9 +7,9 @@ import { ChartContainer,ChartTooltip,ChartTooltipContent,} from "@/components/ui
 import chartData from "@/data/pie-chart/chartData"
 import chartConfig from "./chartConfig"
 export const description = "A pie chart with a label list"
-export default  function ChartPieLabelList() {
+export default  function ChartPieLabelList({isSales = false}) {
   return (
-<Card className="flex flex-col rounded-2xl shadow-md h-[444px] bg-white dark:dark:bg-slate-800 border-none text-gray-900 dark:text-gray-100">
+<Card className="flex flex-col rounded-2xl shadow-md min-h-[444px] bg-white dark:dark:bg-slate-800 border-none text-gray-900 dark:text-gray-100">
   <CardHeader className="items-center ">
     <CardTitle className="text-base md:text-2xl font-semibold">
       Top Selling Products
@@ -19,10 +19,12 @@ export default  function ChartPieLabelList() {
     </CardDescription>
   </CardHeader>
 
-  <CardContent className="flex flex-col items-center p-0">
+  <CardContent className="flex flex-col items-center p-0 ">
     <ChartContainer
       config={chartConfig}
       className="mx-auto aspect-square  w-full min-h-[280px] max-h-[300px]  "
+      
+
     >
       <PieChart>
         <ChartTooltip
@@ -41,7 +43,7 @@ export default  function ChartPieLabelList() {
   <LabelList
     dataKey="product"
     stroke="none"
-    className="fill-gray-900 dark:fill-white"
+    className="fill-white"
     fontSize={12}
     formatter={(value) => chartConfig[value]?.label}
   />
@@ -49,8 +51,8 @@ export default  function ChartPieLabelList() {
 
       </PieChart>
     </ChartContainer>
- 
-    <div className="grid grid-cols-2 gap-4 my-4 text-sm px-6">
+ {isSales  && 
+ <div className="grid grid-cols-2 gap-4 my-4 text-sm px-6">
       {chartData.map((item, index) => (
         <div key={index} className="flex items-center gap-2">
           <span
@@ -60,7 +62,8 @@ export default  function ChartPieLabelList() {
           <span>{item.product} - {item.sales}</span>
         </div>
       ))}
-    </div> 
+    </div>}
+     
   </CardContent>
 </Card> )}
 
